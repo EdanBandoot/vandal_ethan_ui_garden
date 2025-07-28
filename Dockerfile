@@ -8,7 +8,7 @@ COPY . .
 
 RUN npm run format
 RUN npm run lint:fix || echo "Lint issues fixed"
-RUN npm test
+RUN CI=true npm test -- --watchAll=false --detectOpenHandles
 RUN npm run build
 
 FROM nginx:alpine
