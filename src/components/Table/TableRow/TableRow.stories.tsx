@@ -1,14 +1,13 @@
-import React from "react";
-import type { Meta, StoryObj } from "@storybook/react-webpack5";
-import TableRow from "./TableRow";
+import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
+import TableRow from './TableRow';
 
 const meta: Meta<typeof TableRow> = {
-
-  title: "Components/Table/TableRow",
+  title: 'Components/Table/TableRow',
   component: TableRow,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
-    disabled: { control: "boolean" },
+    disabled: { control: 'boolean' },
   },
 };
 
@@ -17,7 +16,6 @@ type Story = StoryObj<typeof TableRow>;
 
 export const Default: Story = {
   args: {
-
     disabled: false,
     children: (
       <>

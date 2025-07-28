@@ -17,13 +17,7 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   return (
-    <StyledButton
-      type={type}
-      disabled={disabled}
-      onClick={handleClick}
-      backgroundColor={backgroundColor}
-      {...props}
-    >
+    <StyledButton type={type} disabled={disabled} onClick={handleClick} backgroundColor={backgroundColor} {...props}>
       {children}
     </StyledButton>
   );

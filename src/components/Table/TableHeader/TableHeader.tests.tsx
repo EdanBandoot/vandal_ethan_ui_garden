@@ -1,11 +1,10 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import TableHeader from "./TableHeader";
-import TableCell from "../TableCell/TableCell";
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import TableHeader from './TableHeader';
+import TableCell from '../TableCell/TableCell';
 
-describe("TableHeader Component", () => {
-
-  it("makes the header visible", () => {
+describe('TableHeader Component', () => {
+  it('makes the header visible', () => {
     render(
       <table>
         <TableHeader>
@@ -14,11 +13,11 @@ describe("TableHeader Component", () => {
         </TableHeader>
       </table>
     );
-    expect(screen.getByText("Header")).toBeVisible();
-    expect(screen.getByText("Header agane")).toBeVisible();
+    expect(screen.getByText('Header')).toBeVisible();
+    expect(screen.getByText('Header agane')).toBeVisible();
   });
 
-  it("disables it", () => {
+  it('disables it', () => {
     render(
       <table>
         <TableHeader disabled>
@@ -27,10 +26,10 @@ describe("TableHeader Component", () => {
         </TableHeader>
       </table>
     );
-    const header1 = screen.getByText("Header");
-    expect(header1).toHaveStyle("color: #99999");
+    const header1 = screen.getByText('Header');
+    expect(header1).toHaveStyle('color: #99999');
 
-    expect(header1).toHaveStyle("background-color: #ffffff");
+    expect(header1).toHaveStyle('background-color: #ffffff');
   });
 });
 

@@ -10,8 +10,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 4px;
-  background-color: ${(props) =>
-    props.disabled ? '#cccccc' : props.backgroundColor || '#007bff'};
+  background-color: ${(props) => (props.disabled ? '#cccccc' : props.backgroundColor || '#007bff')};
   color: white;
   font-size: 1rem;
   cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};

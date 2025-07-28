@@ -1,18 +1,37 @@
-const prettier = require('eslint-plugin-prettier');
+import js from '@eslint/js';
+import tsPlugin from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
+import globals from 'globals';
 
-module.exports = [
+export default [
+  js.configs.recommended,
   {
-    files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
+    files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
-      ecmaVersion: 2021,
-      sourceType: 'module',
+      parser: tsParser,
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+        project: './tsconfig.json',
+      },
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        ...globals.jest,
+      },
     },
     plugins: {
-      prettier,
+      '@typescript-eslint': tsPlugin,
     },
     rules: {
-      'prettier/prettier': 'error',
-      semi: ['warn', 'always'],
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^(React|_.*|DropdownProps)$',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
     },
   },
 ];

@@ -1,26 +1,20 @@
-import React from "react";
+import React from 'react';
 
-import styled from "styled-components";
-import { RadioButtonProps } from "./RadioButton.types";
+import styled from 'styled-components';
+import { RadioButtonProps } from './RadioButton.types';
 
-const Label = styled.label<{ disabled?: boolean; }>`
+const Label = styled.label<{ disabled?: boolean }>`
   display: flex;
   align-items: center;
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
-  color: ${({ disabled }) => (disabled ? "#99999" : "inherit")};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  color: ${({ disabled }) => (disabled ? '#99999' : 'inherit')};
 `;
 
 const Input = styled.input`
   margin-right: 8px;
 `;
- // This component is a styled radio button that can be used to select one option from a set.
-const RadioButton: React.FC<RadioButtonProps> = ({
-  label,
-  name,
-  disabled = false,
-  checked = false,
-  onChange,
-}) => {
+// This component is a styled radio button that can be used to select one option from a set.
+const RadioButton: React.FC<RadioButtonProps> = ({ label, name, disabled = false, checked = false, onChange }) => {
   return (
     <Label data-testid="radio-label" disabled={disabled}>
       <Input
@@ -33,8 +27,6 @@ const RadioButton: React.FC<RadioButtonProps> = ({
       {label}
     </Label>
   );
-
 };
-
 
 export default RadioButton;

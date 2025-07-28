@@ -1,10 +1,10 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import TableFooter from "./TableFooter";
-import TableCell from "../TableCell/TableCell";
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import TableFooter from './TableFooter';
+import TableCell from '../TableCell/TableCell';
 
-describe("TableFooter Component", () => {
-  it("renders all the footers", () => {
+describe('TableFooter Component', () => {
+  it('renders all the footers', () => {
     render(
       <table>
         <TableFooter>
@@ -13,11 +13,11 @@ describe("TableFooter Component", () => {
         </TableFooter>
       </table>
     );
-    expect(screen.getByText("Footer")).toBeVisible();
-    expect(screen.getByText("Footer again")).toBeVisible();
+    expect(screen.getByText('Footer')).toBeVisible();
+    expect(screen.getByText('Footer again')).toBeVisible();
   });
 
-  it("disables all the footers", () => {
+  it('disables all the footers', () => {
     render(
       <table>
         <TableFooter disabled>
@@ -26,8 +26,8 @@ describe("TableFooter Component", () => {
         </TableFooter>
       </table>
     );
-    const footer1 = screen.getByText("Footer");
-    expect(footer1).toHaveStyle("color: #99009");
-    expect(footer1).toHaveStyle("background-color: #ffffff");
+    const footer1 = screen.getByText('Footer');
+    expect(footer1).toHaveStyle('color: #99009');
+    expect(footer1).toHaveStyle('background-color: #ffffff');
   });
 });

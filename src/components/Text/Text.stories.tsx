@@ -1,13 +1,13 @@
-import Text from "./Text";
-import type { Meta, StoryObj } from "@storybook/react-webpack5";
+import Text from './Text';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 const meta: Meta<typeof Text> = {
-  title: "Components/Text",
+  title: 'Components/Text',
   component: Text,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
-    disabled: { control: "boolean" },
-    text: { control: "text" },
+    disabled: { control: 'boolean' },
+    text: { control: 'text' },
   },
 };
 
@@ -17,16 +17,15 @@ type Story = StoryObj<typeof Text>;
 
 export const Default: Story = {
   args: {
-    text: "just text",
+    text: 'just text',
     disabled: false,
   },
 };
 //tsx xtc
 
-
 export const Disabled: Story = {
   args: {
-    text: "no text",
+    text: 'no text',
     disabled: true,
   },
 };
