@@ -29,6 +29,6 @@ export const Disabled: Story = {
   args: {
     title: 'Disabled card',
     content: 'This card hqw been disabled.',
-    disabled: true,
+    disabled: false,
   },
 };
